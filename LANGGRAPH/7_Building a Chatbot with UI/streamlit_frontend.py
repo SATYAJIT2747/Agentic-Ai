@@ -14,7 +14,7 @@ for message in st.session_state['message_history']:
         st.text(message['content'])
 
 #{'role': 'user', 'content': 'Hi'}
-#{'role': 'assistant', 'content': 'Hi=ello'}
+#{'role': 'assistant', 'content': 'Hi=ello'}st.session_state is a dictionary provided by Streamlit that stores variables for the current browser session.
 
 user_input = st.chat_input('Type here')
 
