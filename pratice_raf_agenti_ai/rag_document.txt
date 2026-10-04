@@ -1,0 +1,27 @@
+Retrieval-Augmented Generation (RAG)
+
+Retrieval-Augmented Generation is a technique that combines information retrieval with large language models. Instead of relying only on the knowledge stored inside a language model, RAG retrieves relevant information from an external knowledge base and provides that information to the language model as context.
+
+Document Chunking
+
+Documents are usually too large to send directly to a language model. Therefore, documents are divided into smaller pieces called chunks. Chunking makes it easier to retrieve only the relevant parts of a document.
+
+Recursive Character Text Splitting
+
+Recursive character text splitting is a popular chunking technique. It tries to split the document using a hierarchy of separators such as paragraphs, new lines, spaces, and individual characters. This helps maintain meaningful pieces of text while keeping chunks within a specified size.
+
+Embeddings
+
+An embedding converts text into a numerical vector. Texts with similar meanings tend to have vectors that are close to each other in the embedding space. Embeddings allow a system to perform semantic search rather than simply matching exact keywords.
+
+Vector Databases
+
+A vector database stores embeddings and allows efficient similarity search. Chroma is an example of a vector database that can store document chunks together with their embeddings and metadata.
+
+Similarity Search
+
+When a user asks a question, the question is converted into an embedding. The vector database compares the query embedding with the stored document embeddings and retrieves the most similar chunks.
+
+RAG Pipeline
+
+A typical RAG pipeline contains several steps. First, a document is loaded. Next, the document is divided into chunks. Each chunk is converted into an embedding and stored in a vector database. When a user asks a question, the question is embedded and used to retrieve relevant chunks. Finally, the retrieved chunks are provided to a language model, which generates the final answer using the retrieved context.
